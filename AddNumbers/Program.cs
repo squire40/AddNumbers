@@ -11,26 +11,47 @@ namespace AddNumbers
         static void Main(string[] args)
         {
             bool shouldContinue;
-            int firstInt, secondInt;
+            string name;
+            int age;
 
             do
             {
                 shouldContinue = false;
-                Console.WriteLine("Enter first integer");
-                firstInt = int.Parse(Console.ReadLine());
-                Console.WriteLine("Enter second integer");
-                secondInt = int.Parse(Console.ReadLine());
+                Console.WriteLine("Enter name");
+                name = Console.ReadLine();
+                Console.WriteLine("Enter your age");
 
-                var result = AddNumbers(firstInt, secondInt);
-                Console.WriteLine();
-                Console.WriteLine($"Result is {result}");
-                Console.WriteLine();
-                Console.WriteLine("Continue? y/n");
-                var input = Console.ReadLine();
-                if (input.Equals("y", StringComparison.CurrentCultureIgnoreCase))
-                {
-                    shouldContinue = true;
-                }
+                //try
+                //{
+                    age = int.Parse(Console.ReadLine());
+
+                    Console.WriteLine();
+                    Console.WriteLine($"Hi {name}, you are {age} years old.");
+
+                    //throw new ArgumentException();
+
+                    Console.WriteLine();
+                    Console.WriteLine("Continue? y/n");
+                    var input = Console.ReadLine();
+                    if (input.Equals("y", StringComparison.CurrentCultureIgnoreCase))
+                    {
+                        shouldContinue = true;
+                    }
+
+                //}
+                //catch (FormatException ex)
+                //{
+                //    Console.WriteLine($"Please enter a valid number for your age.  Let's try this again {name}.");
+
+                //    shouldContinue = true;
+                //}
+                //catch (Exception ex)
+                //{
+                //    Console.WriteLine("Something went wrong and I don't know what.  Going to sleep now.  So cold...");
+                //    Console.ReadLine();
+                //    shouldContinue = false;
+                //}
+
             } while (shouldContinue);
         }
 
